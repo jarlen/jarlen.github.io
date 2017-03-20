@@ -87,12 +87,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jarlen's Blog">
-<meta property="og:url" content="http://jarlen.github.io/index.html">
+<meta name="description" content="Android1. android resource Validation 验证Android xml文件内的资源引用123Unresolved class &amp;apos;MainActivity&amp;apos;Cannot resolve symbol &amp;apos;@android:attr/textAppearanceMedium&amp;apos;Cannot resolve symbol &amp;apos;@">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Lint常见问题分析，持续更新中">
+<meta property="og:url" content="http://jarlen.github.io/2017/03/16/Android Lint/index.html">
 <meta property="og:site_name" content="Jarlen's Blog">
+<meta property="og:description" content="Android1. android resource Validation 验证Android xml文件内的资源引用123Unresolved class &amp;apos;MainActivity&amp;apos;Cannot resolve symbol &amp;apos;@android:attr/textAppearanceMedium&amp;apos;Cannot resolve symbol &amp;apos;@">
+<meta property="og:updated_time" content="2017-03-20T13:28:46.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jarlen's Blog">
+<meta name="twitter:title" content="Android Lint常见问题分析，持续更新中">
+<meta name="twitter:description" content="Android1. android resource Validation 验证Android xml文件内的资源引用123Unresolved class &amp;apos;MainActivity&amp;apos;Cannot resolve symbol &amp;apos;@android:attr/textAppearanceMedium&amp;apos;Cannot resolve symbol &amp;apos;@">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://jarlen.github.io/"/>
+  <link rel="canonical" href="http://jarlen.github.io/2017/03/16/Android Lint/"/>
 
 
 
 
 
-  <title> Jarlen's Blog </title>
+  <title> Android Lint常见问题分析，持续更新中 | Jarlen's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -151,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -268,10 +270,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/16/Android Lint/" itemprop="url">
-                  Android Lint常见问题分析，持续更新中
-                </a>
+                Android Lint常见问题分析，持续更新中
               
             
           </h1>
@@ -332,9 +331,7 @@
       
 
       
-        
-          
-            <h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="1-android-resource-Validation"><a href="#1-android-resource-Validation" class="headerlink" title="1. android resource Validation"></a>1. android resource Validation</h4><p> 验证Android xml文件内的资源引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Unresolved class &apos;MainActivity&apos;</div><div class="line">Cannot resolve symbol &apos;@android:attr/textAppearanceMedium&apos;</div><div class="line">Cannot resolve symbol &apos;@android:attr/textAppearanceMedium&apos;</div></pre></td></tr></table></figure></p>
+        <h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><h4 id="1-android-resource-Validation"><a href="#1-android-resource-Validation" class="headerlink" title="1. android resource Validation"></a>1. android resource Validation</h4><p> 验证Android xml文件内的资源引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Unresolved class &apos;MainActivity&apos;</div><div class="line">Cannot resolve symbol &apos;@android:attr/textAppearanceMedium&apos;</div><div class="line">Cannot resolve symbol &apos;@android:attr/textAppearanceMedium&apos;</div></pre></td></tr></table></figure></p>
 <h4 id="2-Android-XML-root-tag-validation"><a href="#2-Android-XML-root-tag-validation" class="headerlink" title="2. Android XML root tag validation"></a>2. Android XML root tag validation</h4><p>检查XML资源是否存储在规定的资源文件夹中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;animation-list&gt; XML file should be in &quot;drawable&quot;, not &quot;anim&quot;</div><div class="line">//应该写在drawable文件中</div></pre></td></tr></table></figure></p>
 <h4 id="3-Missing-JNI-function"><a href="#3-Missing-JNI-function" class="headerlink" title="3. Missing JNI function"></a>3. Missing JNI function</h4><p>本地方法声明在java里但没有相应的JNI函数<br>注: 本地库放在jniLibs文件夹下，而不是libs下。cpu架构兼容问题通过ndk{abiFilters “”} </p>
 <h4 id="4-onClick-handler-is-missing-in-the-related-activity"><a href="#4-onClick-handler-is-missing-in-the-related-activity" class="headerlink" title="4. onClick handler is missing in the related activity"></a>4. onClick handler is missing in the related activity</h4><p>onClick 中的方法需要在响应的activity中声明实现关联。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout</div><div class="line">            android:layout_width=&quot;wrap_content&quot;</div><div class="line">            android:layout_height=&quot;wrap_content&quot;</div><div class="line">            android:layout_weight=&quot;1&quot;</div><div class="line">            android:padding=&quot;10dp&quot;</div><div class="line">            android:gravity=&quot;center&quot;</div><div class="line">        	android:layout_margin=&quot;5dp&quot;</div><div class="line">            android:background=&quot;@drawable/back_ground&quot;</div><div class="line">            android:onClick=&quot;onCarPlateLayout&quot;</div><div class="line">            android:orientation=&quot;vertical&quot; &gt;</div></pre></td></tr></table></figure></p>
@@ -404,16 +401,20 @@
 <h4 id="10-Unsafe-Protected-BroadcastReceiver"><a href="#10-Unsafe-Protected-BroadcastReceiver" class="headerlink" title="10. Unsafe Protected BroadcastReceiver"></a>10. Unsafe Protected BroadcastReceiver</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This broadcast receiver declares an intent-filter for a protected broadcast action string, which can only be sent by the system, not third-party applications. However, the receiver&apos;s onReceive method does not appear to call getAction to ensure that the received Intent&apos;s action string matches the expected value, potentially making it possible for another actor to send a spoofed intent with no action string or a different action string and cause undesired behavior.</div></pre></td></tr></table></figure>
 <p>大概意思是 没在onReceive中判断Action的有效性。别的应用可以模拟攻击。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -422,21 +423,22 @@
       
 
       
-
+        
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -444,6 +446,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/16/Android Lint/"
+           data-title="Android Lint常见问题分析，持续更新中" data-url="http://jarlen.github.io/2017/03/16/Android Lint/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -463,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/7521263?v=3&u=5a728c9a9a3011798133748292a80f8544f09005&s=400"
@@ -508,6 +527,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android"><span class="nav-number">1.</span> <span class="nav-text">Android</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-android-resource-Validation"><span class="nav-number">1.1.</span> <span class="nav-text">1. android resource Validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Android-XML-root-tag-validation"><span class="nav-number">1.2.</span> <span class="nav-text">2. Android XML root tag validation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Missing-JNI-function"><span class="nav-number">1.3.</span> <span class="nav-text">3. Missing JNI function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-onClick-handler-is-missing-in-the-related-activity"><span class="nav-number">1.4.</span> <span class="nav-text">4. onClick handler is missing in the related activity</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-gt-Lint-gt-Performance-性能"><span class="nav-number">2.</span> <span class="nav-text">Android > Lint > Performance(性能)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-FrameLayout-can-be-replaced-with-tag"><span class="nav-number">2.1.</span> <span class="nav-text">1. FrameLayout can be replaced with  tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Handler-reference-leaks"><span class="nav-number">2.2.</span> <span class="nav-text">2. Handler reference leaks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-HashMap-can-be-replaced-with-SparseArray"><span class="nav-number">2.3.</span> <span class="nav-text">3. HashMap can be replaced with SparseArray</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Inefficient-layout-weight"><span class="nav-number">2.4.</span> <span class="nav-text">4. Inefficient layout weight</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Memory-allocations-within-drawing-code"><span class="nav-number">2.5.</span> <span class="nav-text">5. Memory allocations within drawing code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Missing-baselineAligned-attribute"><span class="nav-number">2.6.</span> <span class="nav-text">6. Missing baselineAligned attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Missing-recycle-calls"><span class="nav-number">2.7.</span> <span class="nav-text">7. Missing recycle() calls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-Nested-layout-weights"><span class="nav-number">2.8.</span> <span class="nav-text">8. Nested layout weights</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-Node-can-be-replaced-by-a-TextView-with-compound-drawables"><span class="nav-number">2.9.</span> <span class="nav-text">9. Node can be replaced by a TextView with compound drawables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-Obsolete-layout-params"><span class="nav-number">2.10.</span> <span class="nav-text">10. Obsolete layout params</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-Overdraw-Painting-regions-more-than-once"><span class="nav-number">2.11.</span> <span class="nav-text">11. Overdraw: Painting regions more than once</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-Should-use-valueOf-instead-of-new"><span class="nav-number">2.12.</span> <span class="nav-text">12. Should use valueOf instead of new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-Static-Field-Leaks"><span class="nav-number">2.13.</span> <span class="nav-text">13. Static Field Leaks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-Unused-resources"><span class="nav-number">2.14.</span> <span class="nav-text">14. Unused resources</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-Useless-parent-layout"><span class="nav-number">2.15.</span> <span class="nav-text">15. Useless parent layout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-Using-FloatMath-instead-of-Math"><span class="nav-number">2.16.</span> <span class="nav-text">16. Using FloatMath instead of Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-Constant-and-Resource-Type-Mismatches"><span class="nav-number">2.17.</span> <span class="nav-text">17. Constant and Resource Type Mismatches</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-String-concatenation-as-argument-to-StringBuffer-append-call"><span class="nav-number">2.18.</span> <span class="nav-text">18. String concatenation as argument to StringBuffer.append() call</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-String-StringBuilder-StringBuffer优化建议"><span class="nav-number">2.19.</span> <span class="nav-text">19. String/StringBuilder/StringBuffer优化建议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-gt-Lint-gt-Security-安全性"><span class="nav-number">3.</span> <span class="nav-text">Android > Lint > Security(安全性)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-addJavascriptInterface-Called"><span class="nav-number">3.1.</span> <span class="nav-text">1. addJavascriptInterface Called</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Cipher-getInstance-with-ECB"><span class="nav-number">3.2.</span> <span class="nav-text">2. Cipher.getInstance with ECB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Content-provider-does-not-require-permission"><span class="nav-number">3.3.</span> <span class="nav-text">3. Content provider does not require permission</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Exported-service-does-not-require-permission"><span class="nav-number">3.4.</span> <span class="nav-text">4. Exported service does not require permission</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Hardware-Id-Usage"><span class="nav-number">3.5.</span> <span class="nav-text">5. Hardware Id Usage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Insecure-HostnameVerifier"><span class="nav-number">3.6.</span> <span class="nav-text">6. Insecure HostnameVerifier</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Insecure-TLS-SSL-trust-manager"><span class="nav-number">3.7.</span> <span class="nav-text">7. Insecure TLS/SSL trust manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-openFileOutput-or-similar-call-passing-MODE-WORLD-WRITEABLE"><span class="nav-number">3.8.</span> <span class="nav-text">8. openFileOutput() or similar call passing MODE_WORLD_WRITEABLE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-Receiver-does-not-require-permission"><span class="nav-number">3.9.</span> <span class="nav-text">9. Receiver does not require permission</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-Unsafe-Protected-BroadcastReceiver"><span class="nav-number">3.10.</span> <span class="nav-text">10. Unsafe Protected BroadcastReceiver</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -613,6 +648,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
